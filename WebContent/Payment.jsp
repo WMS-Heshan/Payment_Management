@@ -6,7 +6,7 @@
 <head>
 <link rel="stylesheet" href="Views/bootstrap.min.css">
 <script src="Components/jquery-3.6.0.min.js"></script>
-<script src="Components/User.js"></script>
+<script src="Components/Payment.js"></script>
 
 
 <meta charset="ISO-8859-1">
@@ -17,7 +17,7 @@
 <div class="container"><div class="row"><div class="col-6">
 <h1>Payment Management</h1>
 
-	<form id="formItem" name="formItem">
+	<form id="formPaymentItem" name="formPaymentItem">
 		
 		 Full Name:
 		<input id="fullname" name="fullname" type="text" class="form-control form-control-sm"><br> 
@@ -42,8 +42,8 @@
 		<input id="amount" name="amount" type="text" class="form-control form-control-sm"><br>
 		
 		
-		<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
-		<input type="hidden" id="payment_id" name="payment_id" value="">
+		<input id="btnSavePay" name="btnSavePay" type="button" value="Save" class="btn btn-primary">
+		<input type="hidden" id="paymentid" name="paymentid" value="">
 	</form>
 	
 	<div id="alertSuccess" class="alert alert-success"></div>
