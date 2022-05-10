@@ -1,4 +1,4 @@
-<%@ page import="com.User" %>
+<%@ page import="com.payment" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -10,41 +10,35 @@
 
 
 <meta charset="ISO-8859-1">
-<title>User Order Management</title>
+<title>Payment Management</title>
 </head>
 <body>
 
 <div class="container"><div class="row"><div class="col-6">
-<h1>User Order Management</h1>
+<h1>Payment Management</h1>
 
 	<form id="formItem" name="formItem">
 		
-		 Buyer Name:
-		<input id="fullname" name="fullname" type="text" class="form-control form-control-sm"><br> 
-		Address:
+		 Full Name:
+		<input id="buyerName" name="buyerName" type="text" class="form-control form-control-sm"><br> 
+		E-mail:
 		<input id="address" name="address" type="text" class="form-control form-control-sm"><br>
-		 NIC:
+		 Mobile No:
 		<input id="NIC" name="NIC" type="text" class="form-control form-control-sm"><br>
-		 Software Name:
+		 Address:
 		<input id="softwareName" name="softwareName" type="text" class="form-control form-control-sm"><br>
-		 Size:
+		 Zip-Code:
 		<input id="size" name="size" type="text" class="form-control form-control-sm"><br> 
-		<label>Version</label> 
+		<label>Payment Type</label> 
 							<select id="version" name="version" class="form-control form-control-sm">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
+							<option value="1">Visa</option>
+							<option value="2">Master</option>
+							<option value="3">Direct Payment</option>
+
 							</select><br>
-		 Cost:
-		<input id="cost" name="cost" type="text" class="form-control form-control-sm"><br>
 		 Date:
+		<input id="cost" name="cost" type="Date" class="form-control form-control-sm"><br>
+		 Amount:
 		<input id="date" name="date" type="text" class="form-control form-control-sm"><br>
 		
 		
