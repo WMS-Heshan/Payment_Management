@@ -20,30 +20,30 @@
 	<form id="formItem" name="formItem">
 		
 		 Full Name:
-		<input id="buyerName" name="buyerName" type="text" class="form-control form-control-sm"><br> 
+		<input id="fullname" name="fullname" type="text" class="form-control form-control-sm"><br> 
 		E-mail:
-		<input id="address" name="address" type="text" class="form-control form-control-sm"><br>
+		<input id="email" name="email" type="text" class="form-control form-control-sm"><br>
 		 Mobile No:
-		<input id="NIC" name="NIC" type="text" class="form-control form-control-sm"><br>
+		<input id="mobile" name="mobile" type="text" class="form-control form-control-sm"><br>
 		 Address:
-		<input id="softwareName" name="softwareName" type="text" class="form-control form-control-sm"><br>
+		<input id="adderss" name="adderss" type="text" class="form-control form-control-sm"><br>
 		 Zip-Code:
-		<input id="size" name="size" type="text" class="form-control form-control-sm"><br> 
+		<input id="zipcode" name="zipcode" type="text" class="form-control form-control-sm"><br> 
 		<label>Payment Type</label> 
-							<select id="version" name="version" class="form-control form-control-sm">
+							<select id="paymenttype" name="paymenttype" class="form-control form-control-sm">
 							<option value="1">Visa</option>
 							<option value="2">Master</option>
 							<option value="3">Direct Payment</option>
 
 							</select><br>
 		 Date:
-		<input id="cost" name="cost" type="Date" class="form-control form-control-sm"><br>
+		<input id="Date" name="Date" type="Date" class="form-control form-control-sm"><br>
 		 Amount:
-		<input id="date" name="date" type="text" class="form-control form-control-sm"><br>
+		<input id="amount" name="amount" type="text" class="form-control form-control-sm"><br>
 		
 		
 		<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
-		<input type="hidden" id="hidItemIDSave" name="hidItemIDSave" value="">
+		<input type="hidden" id="payment_id" name="payment_id" value="">
 	</form>
 	
 	<div id="alertSuccess" class="alert alert-success"></div>
@@ -51,8 +51,8 @@
 	<br>
 	<div id="divItemGrid">
 	<%
-	User CartObj = new User(); 
-	 out.print(CartObj.readCart()); 
+	payment PaymentObj = new payment(); 
+	 out.print(PaymentObj.readPayment()); 
 	%>
 	</div>
 </div> </div> </div> 
