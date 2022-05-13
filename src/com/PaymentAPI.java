@@ -54,7 +54,7 @@ public class PaymentAPI extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Map pmt = getPmtMap(request); 
-		String output = PaymentObj.updatePayment(pmt.get("payment_id").toString(), 
+		String output = PaymentObj.updatePayment(pmt.get("hidItemIDSave").toString(), 
 				pmt.get("fullname").toString(), 
 				pmt.get("email").toString(),
 				pmt.get("mobile").toString(), 

@@ -17,7 +17,7 @@
 <div class="container"><div class="row"><div class="col-6">
 <h1>Payment Management</h1>
 
-	<form id="formPaymentItem" name="formPaymentItem">
+	<form id="formItem" name="formItem">
 		
 		 Full Name:
 		<input id="fullname" name="fullname" type="text" class="form-control form-control-sm"><br> 
@@ -31,9 +31,9 @@
 		<input id="zipcode" name="zipcode" type="text" class="form-control form-control-sm"><br> 
 		<label>Payment Type</label> 
 							<select id="paymenttype" name="paymenttype" class="form-control form-control-sm">
-							<option value="1">Visa</option>
-							<option value="2">Master</option>
-							<option value="3">Direct Payment</option>
+							<option value="Visa">Visa</option>
+							<option value="Master">Master</option>
+							<option value="Direct Payment">Direct Payment</option>
 
 							</select><br>
 		 Date:
@@ -42,8 +42,8 @@
 		<input id="amount" name="amount" type="text" class="form-control form-control-sm"><br>
 		
 		
-		<input id="btnSavePay" name="btnSavePay" type="button" value="Save" class="btn btn-primary">
-		<input type="hidden" id="paymentid" name="paymentid" value="">
+		<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
+		<input type="hidden" id="hidItemIDSave" name="hidItemIDSave" value="">
 	</form>
 	
 	<div id="alertSuccess" class="alert alert-success"></div>

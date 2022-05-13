@@ -1,4 +1,4 @@
-$(document).on("click", "#btnSavePay", function(event){ 
+$(document).on("click", "#btnSave", function(event){ 
 	
 	// Clear alerts---------------------
 	 $("#alertSuccess").text(""); 
@@ -19,12 +19,12 @@ $(document).on("click", "#btnSavePay", function(event){
 
 
 // If valid------------------------
-var type = ($("#payment_id").val() == "") ? "POST" : "PUT"; 
+var type = ($("#hidItemIDSave").val() == "") ? "POST" : "PUT"; 
 	$.ajax( 
 	{ 
 	 url : "PaymentAPI", 
 	 type : type, 
-	 data : $("#formPaymentItem").serialize(), 
+	 data : $("#formItem").serialize(), 
 	 dataType : "text", 
 	 complete : function(response, status) { 
 		 
@@ -66,7 +66,7 @@ function onItemSaveComplete(response, status){
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event){ 
 		
-		 $("#paymentid").val($(this).data("payment_id")); 
+		 $("#hidItemIDSave").val($(this).data("userid")); 
 		 $("#fullname").val($(this).closest("tr").find('td:eq(0)').text()); 
 		 $("#email").val($(this).closest("tr").find('td:eq(1)').text()); 
 		 $("#mobile").val($(this).closest("tr").find('td:eq(2)').text()); 
@@ -75,6 +75,7 @@ $(document).on("click", ".btnUpdate", function(event){
 		 $("#paymenttype").val($(this).closest("tr").find('td:eq(5)').text()); 
 		 $("#Date").val($(this).closest("tr").find('td:eq(6)').text()); 
 		 $("#amount").val($(this).closest("tr").find('td:eq(7)').text()); 
+		// $("#").val($(this).closest("tr").find('td:eq(8)').text()); 
 		 
 });
 
@@ -87,17 +88,17 @@ $(document).on("click", ".btnRemove", function(event) {
 	 { 
 	 	url : "PaymentAPI", 
 	 	type : "DELETE", 
-	 	data : "payment_id=" + $(this).data("payment_id"),
+	 	data : "payment_id=" + $(this).data("userid"),
 	 	dataType : "text", 
 	 	complete : function(response, status) { 
-	 		onPaymentDeleteComplete(response.responseText, status); 
+	 		onItemDeleteComplete(response.responseText, status); 
 	 	} 
 	}); 
 })
 	
 
 
-function onPaymentDeleteComplete(response, status){
+function onItemDeleteComplete(response, status){
 	
 	if (status == "success") {
 		
@@ -127,46 +128,6 @@ function onPaymentDeleteComplete(response, status){
 // CLIENT-MODEL================================================================
 function validateItemForm(){
 	// CODE
-
-//Address---------------------------
-if ($("#address").val().trim() == "")
-{
-return "Insert Address.";
-} 
-
-//Size-------------------------------
-if ($("#size").val().trim() == "")
-{
-return "Insert Size.";
-}
-
-//Version----------------------------
-if ($("#version").val().trim() == "")
-{
-return "Insert version.";
-}
-
-//Date---------------------------------
-if ($("#Date").val().trim() == "")
-{
-return "Insert Date.";
-}
-	
-// amount-------------------------------
-if ($("#amount").val().trim() == ""){
-	
-	return "Insert amount.";
-}
-// is numerical value
-var tmpPrice = $("#amount").val().trim();
-if (!$.isNumeric(tmpPrice)){
-			
-	return "Insert a numerical value for amount.";
-}
-		
-// convert to decimal price
-$("#amount").val(parseFloat(tmpPrice).toFixed(2));
-
 
 	return true;
 }
