@@ -123,7 +123,7 @@ public class payment {
 
 		} catch (Exception e) {
 
-			output = "Error while reading the cart orders.";
+			output = "Error while reading the Payment Details.";
 			System.err.println(e.getMessage());
 		}
 		return output;
