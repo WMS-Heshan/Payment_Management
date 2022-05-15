@@ -73,8 +73,8 @@ public class payment {
 				return "Error while connecting to the database for reading.";
 			}
 
-			// Prepare the html table to be displayed
-			output = "<table border='1' >" + "<tr >" + "<th >Full Name</th>" + "<th >Email</th>" + "<th>Mobile</th>"
+			// Prepare the HTML table to be displayed
+			output = "<table border='1' class='table table-info table-bordered table-striped table-hover table-warning' >" + "<tr >" + "<th >Full Name</th>" + "<th >Email</th>" + "<th>Mobile</th>"
 					+ "<th>Address</th>" + "<th>Zip-Code</th>" + "<th>Payment_Type</th>" + "<th>Date</th>"
 					+ "<th>Amount</th>" + "<th>Update</th>" + "<th>Remove</th>" +
 
