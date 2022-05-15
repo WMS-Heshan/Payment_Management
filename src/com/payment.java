@@ -9,6 +9,7 @@ import java.sql.Statement;
 public class payment {
 
 	// connection to database
+	
 	private Connection DBConnect() {
 		Connection con = null;
 		try {
@@ -24,6 +25,7 @@ public class payment {
 	}
 
 	// Insert payment details
+	
 	public String insertPayment(String payment_id, String fullname, String email, String mobile, String adderss,
 			String zipcode, String paymenttype, String Date, String amount) {
 		String output = "";
@@ -33,7 +35,6 @@ public class payment {
 				return "Error while connecting to the database for inserting.";
 			}
 
-			// create a prepared statement
 			String query = "INSERT INTO `paymentdetails`(`payment_id`, `fullname`, `email`, `mobile`, `adderss`, `zipcode`, `paymenttype`, `Date`, `amount`) VALUES (?,?,?,?,?,?,?,?,?)";
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 
@@ -57,14 +58,14 @@ public class payment {
 
 		} catch (Exception e) {
 
-			output = "{\"status\":\"error\", \"data\":\"Error while inserting the order to cart.\"}";
+			output = "{\"status\":\"error\", \"data\":\"Error while inserting the Payment.\"}";
 			System.err.println(e.getMessage());
 		}
 		return output;
 	}
+
+	// Read Payment Details
 	
-	
-	//Read Payment Details
 	public String readPayment() {
 		String output = "";
 		try {
@@ -74,9 +75,10 @@ public class payment {
 			}
 
 			// Prepare the HTML table to be displayed
-			output = "<table border='1' class='table table-info table-bordered table-striped table-hover table-warning' >" + "<tr >" + "<th >Full Name</th>" + "<th >Email</th>" + "<th>Mobile</th>"
-					+ "<th>Address</th>" + "<th>Zip-Code</th>" + "<th>Payment_Type</th>" + "<th>Date</th>"
-					+ "<th>Amount</th>" + "<th>Update</th>" + "<th>Remove</th>" +
+			output = "<table border='1' class='table table-info table-bordered table-striped table-hover table-warning' >"
+					+ "<tr >" + "<th >Full Name</th>" + "<th >Email</th>" + "<th>Mobile</th>" + "<th>Address</th>"
+					+ "<th>Zip-Code</th>" + "<th>Payment_Type</th>" + "<th>Date</th>" + "<th>Amount</th>"
+					+ "<th>Update</th>" + "<th>Remove</th>" +
 
 					"</tr>";
 
@@ -99,7 +101,6 @@ public class payment {
 
 				// Add into the html table
 
-				// output += "<tr><td>" + orderId + "</td>";
 				output += "<td>" + fullname + "</td>";
 				output += "<td>" + email + "</td>";
 				output += "<td>" + mobile + "</td>";
@@ -129,9 +130,9 @@ public class payment {
 		return output;
 
 	}
+
+	// Update Payment Details
 	
-	
-	//Update Payment Details
 	public String updatePayment(String payment_id, String fullname, String email, String mobile, String adderss,
 			String zipcode, String paymenttype, String Date, String amount) {
 		String output = "";
@@ -166,14 +167,14 @@ public class payment {
 
 		} catch (Exception e) {
 
-			output = "{\"status\":\"error\", \"data\": \"Error while updating the cart order.\"}";
+			output = "{\"status\":\"error\", \"data\": \"Error while updating the Payment.\"}";
 			System.err.println(e.getMessage());
 		}
 		return output;
 	}
+
+	// Delete Payment Details
 	
-	
-	//Delete Payment Details
 	public String deletePayment(String payment_id) {
 		String output = "";
 		try {
@@ -196,7 +197,7 @@ public class payment {
 			output = "{\"status\":\"success\", \"data\": \"" + newPayment + "\"}";
 
 		} catch (Exception e) {
-			output = "{\"status\":\"error\", \"data\": \"Error while deleting the cart order.\"}";
+			output = "{\"status\":\"error\", \"data\": \"Error while deleting the Payment.\"}";
 			System.err.println(e.getMessage());
 		}
 		return output;

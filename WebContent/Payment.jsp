@@ -30,7 +30,7 @@
 </head>
 <body>
 
-	<!-- form container -->
+	<!-- form container Start -->
 
 	<section class="ftco-section">
 		<div class="container">
@@ -49,19 +49,10 @@
 								<div class="w-100">
 									<h3 class="mb-4">Payment Details</h3>
 								</div>
-								<!-- <div class="w-150">
-									<p class="social-media d-flex justify-content-end">
-										<a href="#"
-											class="social-icon d-flex align-items-center justify-content-center"><span
-											class="fa fa-facebook"></span></a> <a href="#"
-											class="social-icon d-flex align-items-center justify-content-center"><span
-											class="fa fa-twitter"></span></a>
-									</p>
-								</div> -->
 							</div>
-							
+
 							<form id="formItem" name="formItem" class="signin-form">
-							
+
 								<div class="form-group mb-3">
 									<label class="label" for="name">Full Name</label> <input
 										id="fullname" name="fullname" type="text" class="form-control"
@@ -89,16 +80,16 @@
 								</div>
 								<div class="form-group mb-3">
 									<label class="label" for="name">Payment Type</label> <select
-										id="paymenttype" type="text" name="paymenttype" class="form-control"
-										placeholder="Payment Type" required >
+										id="paymenttype" type="text" name="paymenttype"
+										class="form-control" placeholder="Payment Type" required>
 										<option value="Visa">Visa</option>
 										<option value="Master">Master</option>
 										<option value="Direct Payment">Direct Payment</option>
-										</select>
+									</select>
 								</div>
 								<div class="form-group mb-3">
-									<label class="label" for="name">Date</label> <input
-										id="Date" type="Date" name="Date" class="form-control"
+									<label class="label" for="name">Date</label> <input id="Date"
+										type="Date" name="Date" class="form-control"
 										placeholder="Date" required>
 								</div>
 								<div class="form-group mb-3">
@@ -107,15 +98,18 @@
 										placeholder="Amount" required>
 								</div>
 								<div class="form-group">
-								
-								<input id="btnSave" name="btnSave" type="button" value="Save"
-									class="form-control btn btn-primary rounded submit px-3"> 
-								<input type="hidden" id="hidItemIDSave" name="hidItemIDSave" value="">
+
+									<input id="btnSave" name="btnSave" type="button" value="Save"
+										class="form-control btn btn-primary rounded submit px-3">
+									<input type="hidden" id="hidItemIDSave" name="hidItemIDSave"
+										value="">
 								</div>
-								<div>
+
+								<!-- <div>
 								<a href="viewanddelet.jsp" class="form-control btn btn-primary rounded submit px-3">
 								View Payment</a>
-								</div>
+								</div> -->
+
 							</form>
 						</div>
 					</div>
@@ -125,11 +119,12 @@
 	</section>
 
 	<!-- form container End-->
+	
 	<div class="container">
 		<div class="row">
 			<div>
-				<h1 style= "text-align:center">Payment Details View</h1>
-				
+				<h1 style="text-align: center">Payment Details View</h1>
+
 				<div id="alertSuccess" class="alert alert-success"></div>
 				<div id="alertError" class="alert alert-danger"></div>
 				<br>
